@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Estrutura base do paciente
+struct Pacient
+{
+  int codigo;
+  char nome[30];
+  struct Pacient *proximo;
+};
+typedef struct Pacient pacient;
+pacient* criar(void){
+  return NULL;
+}
+
+pacient* addfila(pacient* k,char nome ,int i){
+  pacient* novo=(pacient*)realloc(novo ,sizeof(pacient));
+  novo->codigo=i;
+  novo->
+}
+
+void add_node(pacient *raiz, int pos)
+{
+  int i;
+  pacient *p = raiz;
+  for ( i = 0; i < pos-1; i ++)
+  {
+    if (p->next = NULL;){
+      break;
+    }
+    p = p->next;
+  }
+  
+}
+
+void menu(int i){
+  if (i == 1){
+    system("clear");
+    printf("\nBem vindo ao consultório do doutor RANsZchucrute!! \n");
+    printf("\n");
+    printf("Escolha uma das opções desejadas. \n");
+    printf("1 - Entrar na fila \n");
+    printf("2 - Sair da lista de espera\n");
+    printf("3 - Sair\n");
+  }
+  if (i == 2){
+    printf("\n");
+    printf("Digite o nome do paciente:\n");
+  }
+}
+
+int main()
+{
+  int cod, j;
+  char nome[30];
+  pacient *raiz = NULL;
+  ppacient1 = (pacient*) malloc(sizeof(pacient*));
+  do{
+    menu(1);
+    scanf("%d", &cod);
+    if (cod == 1){
+      menu(2);
+      scanf("%s", &nome[30]);
+      printf("Digite a posição na lista\n");
+      scanf("%d", &j);
+      addfila(ppacient1, *nome, j);
+    }
+    if (cod == 2){
+      printf("Teste 2");
+    }
+  }
+  while (cod != 3);
+}
