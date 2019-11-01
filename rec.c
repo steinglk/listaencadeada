@@ -40,6 +40,18 @@ void addinicio(List* list, DataNode data) {
     list->raiz = node;
     list->size++;
 }
+
+void addfinal(List* list, DataNode data) {
+    Node* node = (Node*) malloc(sizeof(Node));
+    Node* pointer = list->raiz;
+    node->data = data;
+    node->prox = NULL;
+    while (pointer->prox != NULL) {
+        pointer->prox;
+    }
+    pointer->prox = node;
+
+}
 void printlist(List* list) {
     Node* pointer = list->raiz;
     while(pointer != NULL){
@@ -48,16 +60,27 @@ void printlist(List* list) {
     }
 }
 
-List* exerc1(List* list) {
+List* exerc1a(List* list) {
     Node* pointer = list->raiz;
+    // pointer para percorrer a lista
     Node* aux = pointer;
-    list->raiz = pointer->prox;
-    while(pointer != NULL) {
+    // auxiliar para armazenar a posição 1 da lista
+    list->raiz = pointer->prox; //raiz aponta pro segundo agora
+    while(pointer->prox != NULL) {
         pointer = pointer->prox;
     }
-    pointer->prox = aux;
-    aux->prox = NULL;
+    pointer->prox = aux; // ultimo elemento aponta para o primeiro elemento original
+    aux->prox = NULL; // primeiro elemento aponta para NULL
     return list;
+}
+
+List* exerc1b(List* list) {
+    Node* pointer = list->raiz;
+    List* l2 = criarlista();
+    while(pointer->prox != NULL) {
+        addfinal(l2, pointer->data);
+    }
+    return l2;
 }
 
 int main(){
@@ -74,7 +97,8 @@ int main(){
     data.id = 50;
     addinicio(l, data);
     printlist(l);
-    List* l2 = exerc1(l);
+    List* l2 = criarlista();
+    l2 = exerc1a(l2);
     printlist(l2);
 
 
